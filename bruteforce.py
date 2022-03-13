@@ -76,7 +76,6 @@ def read_csv(my_file):
             Action(row['name'], row['price'], row['profit'])
 
 def search_all_possibilities(max_cost):
-    count_el = 0
     for action in range(len(Action.list_action)+1):
         combinaisons = list(combinations(Action.list_action, action))
         for combinaison in combinaisons:
@@ -85,7 +84,6 @@ def search_all_possibilities(max_cost):
                 price_sum = price_sum + element.price
             if price_sum <= max_cost:
                 Wallet(combinaison)
-            count_el += 1
 
 def main():
     read_csv(CSV_FILE[2])
